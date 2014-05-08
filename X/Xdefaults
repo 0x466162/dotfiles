@@ -9,18 +9,22 @@ xterm*utf8:   1
 *VT100*boldColors: on
 *VT100*dynamicColors: on
 
-XTerm*VT100*font: -misc-fixed-medium-r-semicondensed-*-12-*-*-*-*-*-iso10646-1              
-XTerm*VT100*wideFont: -misc-fixed-medium-r-normal-*-13-120-75-75-c-120-iso10646-1
+!*VT100*font: -misc-fixed-medium-r-semicondensed-*-12-*-*-*-*-*-iso10646-1              
+!*VT100*wideFont: -misc-fixed-medium-r-normal-*-13-120-75-75-c-120-iso10646-1
+urxvt*font: xft:DejaVu Sans Mono:pixelsize=10
 !XTerm*faceName: xft:DejaVu Sans Mono
 !XTerm*faceSize: 8
 
 !XTerm*loginShell: true
 
-xterm.bellIsUrgent: true
+*.bellIsUrgent: true
 
 ! Uncomment this for "white" text on a dark background.
 !*VT100*foreground: gray90
 !*VT100*background: black
+
+!*VT100*foreground: firebrick
+!*VT100*background: gray90
 
 ! - OR -
 ! Uncomment this for black text on a "white" background.
@@ -43,12 +47,12 @@ xterm.bellIsUrgent: true
 ! instances behave as they should. We have to force the
 ! correct behavior.
 !
-XTerm.termName:   xterm-color
-UXTerm.termName:  xterm-color
+XTerm.termName:   xterm-256color
+!UXTerm.termName:  xterm-256color
 
 ! Uncomment this to use color for underline attribute
 !*VT100*colorULMode: on
-*VT100*colorUL: yellow
+!*VT100*colorUL: yellow
 
 *VT100*italicULMode: on
 
@@ -57,7 +61,7 @@ UXTerm.termName:  xterm-color
 
 ! Uncomment this to use color for the bold attribute
 !*VT100*colorBDMode: on
-*VT100*colorBD: white
+!*VT100*colorBD: lightgrey
 
 ! Uncomment this to use the bold/underline colors in preference to other colors
 !*VT100*colorAttrMode: on
@@ -65,26 +69,26 @@ UXTerm.termName:  xterm-color
 ! These are the 8 ANSI colors and their bright equivalents.  Depending on
 ! other resource settings, xterm may use the bright colors when displaying
 ! bold text (see the boldColors resource).
-*VT100*color0: black
-*VT100*color1: red3
-*VT100*color2: green3
-*VT100*color3: yellow3
-*VT100*color4: blue2
-*VT100*color5: magenta3
-*VT100*color6: cyan3
-*VT100*color7: gray90
-*VT100*color8: gray50
-*VT100*color9: red
-*VT100*color10: green
-*VT100*color11: yellow
-*VT100*color12: rgb:5c/5c/ff
-*VT100*color13: magenta
-*VT100*color14: cyan
-*VT100*color15: white
+!*VT100*color0: firebrick
+!*VT100*color1: red3
+!*VT100*color2: green3
+!*VT100*color3: yellow3
+!*VT100*color4: blue2
+!*VT100*color5: magenta3
+!*VT100*color6: cyan3
+!*VT100*color7: gray90
+!*VT100*color8: gray50
+!*VT100*color9: red
+!*VT100*color10: green
+!*VT100*color11: yellow
+!*VT100*color12: rgb:5c/5c/ff
+!*VT100*color13: magenta
+!*VT100*color14: cyan
+!*VT100*color15: white
 
-*VT100*cursorColor: red
-*VT100*cursorBlink: true
-*VT100*cursorOnTime: 800
+!*VT100*cursorColor: red
+*cursorBlink: true
+*cursorOnTime: 800
 
 ! Disclaimer: there are no standard colors used in terminal emulation.
 !
@@ -167,3 +171,5 @@ XTerm*VT100.translations: #override \
 	Meta <Key> plus: larger-vt-font() \n\
 	Super <Key> minus: smaller-vt-font() \n\
 	Super <Key> plus: larger-vt-font() \n
+
+#include ".Xdefaults.solarized"
