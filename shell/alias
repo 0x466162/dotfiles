@@ -1,3 +1,0 @@
-alias drumrec='aucat -C0:1 -a off -o "drumming-`date '+%Y%m%d%M'`.raw" -f /dev/audio1'
-alias apg='apg -t -m12 -x12 -MSCNL -EO0I1l\;'
-alias ls='ls -F $*'

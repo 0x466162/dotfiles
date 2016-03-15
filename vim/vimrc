@@ -1,86 +1,60 @@
-" break line
-set textwidth=72
+set nocompatible
+set modelines=0
 
-" Reformat paragraph
-nnoremap Q gqap
-vnoremap Q gq
+let mapleader = ","
 
-" take indent for new line from previous line
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+set encoding=utf-8
+set scrolloff=3
 set autoindent
-
-" smart autoindenting for C programs
-set cindent
-set cinoptions=:0,t0,+4,(4
-
-" highlight match while typing search pattern
-set incsearch
-
-"ignore case in search patterns
-set ignorecase
-
-" no ignore case when pattern has uppercase
-set smartcase
-
-" highlight matches with last search pattern
-set nohlsearch
-
-" show cursor line and column in the status line
-set ruler
-
-" message on status line to show current mode
 set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+"set cursorline "makes sourcerer slow...
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set laststatus=2
+"set relativenumber
+"set undofile
+syntax on
 
-" briefly jump to matching bracket if insert one
-set showmatch
-
-" tenths of a second to show matching paren
-set matchtime=3
-
-" number of spaces that <Tab> in file uses
-set tabstop=8
-
-" number of spaces to use for (auto)indent step
-set shiftwidth=8
-
-" use spaces when <Tab> is inserted
-" set expandtab
-
-" wrap long lines at a blank
-set nolinebreak
-
-" Ignore case in search patterns.
+nnoremap / /\v
+vnoremap / /\v
 set ignorecase
+set smartcase
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <leader><space> :noh<cr>
 
-" allow backspacing over the start of insert
-set backspace=2
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=85
 
-" the screen contents is NOT restored when exiting Vim
-" set t_ti= t_te=
-" use .viminfo file upon startup and exiting
-set viminfo='50,\"50,n~/.viminfo
+set list
+set listchars=tab:▸\ ,eol:¬
 
-" don't give the intro message when starting Vim
-set shortmess=I
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
 
-" recognize function keys in Insert mode
-set esckeys
+"au FocusLost * :wa " Save file when losing focus
 
-set pastetoggle=<F3>
+nnoremap <leader>y gg"*yG``
 
-" syntaxhighlighting
-"if has("terminfo")
-"  set t_Co=16
-"  set t_AB=[%?%p1%{8}%<%t%p1%{40}%+%e%p1%{92}%+%;%dm
-"  set t_AF=[%?%p1%{8}%<%t%p1%{30}%+%e%p1%{82}%+%;%dm
-"else
-"  set t_Co=16
-"  set t_Sf=[3%dm
-"  set t_Sb=[4%dm
-"endif
-:syntax on
-
-" Statements bold black
-hi Statement cterm=bold ctermfg=Black
-
-set background=dark
-colorscheme solarized
+colorscheme sourcerer

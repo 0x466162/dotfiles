@@ -1,10 +1,11 @@
-ENV="${HOME}/.kshrc" ; export ENV
 [ -r ${HOME}/.xmodmaprc ] && xmodmap ${HOME}/.xmodmaprc
-#/home/fab/code/ftray/obj/ftray &
-xidle -timeout 500 -program '/usr/local/bin/slock' &
-feh --bg-scale ${HOME}/.bg.png &
-xcompmgr &
-sndiod -v 100 -s default -v 127 -s max
-xbacklight -set 15 &
+redshift-gtk -l 48.77:9.18 -g 0.8 -m randr &
+xsetroot -solid AliceBlue
+redshift &
+pidgin &
 parcellite &
-spectrwm
+/usr/local/libexec/tray-app/battery &
+doas /usr/local/libexec/tray-app/eject &
+~/bin/fbar &
+/home/fab/git/dwm/dwm
+# /usr/local/bin/dwm
